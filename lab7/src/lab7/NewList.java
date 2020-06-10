@@ -132,11 +132,13 @@ public class NewList implements List<Car> {
                         return true;
                     } else if (i == 0) {
                         head = head.getNext();
+                        head.setPrevious(null);
                         size--;
                         System.gc();
                         return true;
                     } else if (i == size - 1) {
                         tail = tail.getPrevious();
+                        tail.setNext(null);
                         size--;
                         System.gc();
                         return true;
